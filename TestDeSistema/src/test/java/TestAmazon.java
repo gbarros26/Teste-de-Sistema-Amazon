@@ -110,10 +110,10 @@ public class TestAmazon {
     public void pesquisarCelularFalso(){
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.amazon.com.br/");
-        WebElement busca = driver.findElement(By.id("twotabsearchtextbox")); //id de um campodebusca    //find element e send keys  e By.id
-        busca.sendKeys("celular xiaomi");  //ex: oq pesquisa
-        WebElement botao = driver.findElement(By.name("nav-search-submit-button"));     //   assert false
-        Assertions.assertFalse(botao.isDisplayed());
+        WebElement busca = driver.findElement(By.id("twotabsearchtextbox"));
+        busca.submit();
+        String alibaba = "https://www.alibaba.com/";
+        Assertions.assertFalse(alibaba.equals(driver.getCurrentUrl()));
 
 
     }
